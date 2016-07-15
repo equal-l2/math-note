@@ -4,6 +4,7 @@ derivdir = ./deriv
 rule make
     command = pandoc --latex-engine=lualatex -Vdocumentclass=ltjsarticle $in -o $out
 
-build $derivdir/calculus.pdf: make $srcdir/calculus.md
-build $derivdir/linear.pdf: make $srcdir/linear.md
-build $derivdir/cs.pdf: make $srcdir/cs.md
+build $srcdir/meta.yml : phony
+build $derivdir/calculus.pdf: make $srcdir/calculus.md $srcdir/meta.yml
+build $derivdir/linear.pdf: make $srcdir/linear.md $srcdir/meta.yml
+build $derivdir/cs.pdf: make $srcdir/cs.md $srcdir/meta.yml

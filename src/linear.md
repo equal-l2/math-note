@@ -1,5 +1,6 @@
 \newcommand{\trans}[1]{{}^t\! #1}
 \newcommand{\rank}[1]{\mathrm{rank}#1}
+
 #転置行列の性質
 転置行列とは、ある行列の行と列を反転させたものである。
 
@@ -115,15 +116,15 @@ $n$次正方行列$A$と$n$次単位行列$E$について、$A A^{-1} = A^{-1} A
 * 積$AB$は正則行列であり、$(AB)^{-1}=B^{-1}A^{-1}$となる
 
 #1次独立  
-線形空間$V$の$k$個のベクトル$\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_k$について、  
-$r_1 \mathbb{v}_1 + r_2 \mathbb{v}_2 + \cdots + r_k \mathbb{v}_k = \mathbb{0}$  
+線形空間$V$の$k$個のベクトル$\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_k$について、  
+$r_1 \mathbbm{v}_1 + r_2 \mathbbm{v}_2 + \cdots + r_k \mathbbm{v}_k = 0$  
 が$r_1,r_2,\cdots,r_k$について自明な解しか持たないとき、これらのベクトルの組は1次独立であるという。  
 ベクトルの組が1次独立でないとき、1次従属であるという。  
 1次従属であるときは、ベクトルの組の中の少なくとも1個が他のベクトルの線型結合で表される。  
-* 線形空間$V$の$k$個のベクトル$\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_k$が1次独立であるための必要条件は、これらのベクトルからなる行列$A=(\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_k)$について$\rank{A}=k$である。  
+* 線形空間$V$の$k$個のベクトル$\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_k$が1次独立であるための必要条件は、これらのベクトルからなる行列$A=(\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_k)$について$\rank{A}=k$である。  
 
-* $\mathbb{R}^n$の$n$個のベクトル$\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_n$について、$A=(\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_n)$とおくと、次は同値である。  
-    * $\mathbb{v}_1 ,\mathbb{v}_2 ,\cdots ,\mathbb{v}_n$は1次独立である
+* $\mathbb{R}^n$の$n$個のベクトル$\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_n$について、$A=(\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_n)$とおくと、次は同値である。  
+    * $\mathbbm{v}_1 ,\mathbbm{v}_2 ,\cdots ,\mathbbm{v}_n$は1次独立である
     * $\rank{A}=n$
     * $|A| \neq 0$
     * $A$は正則行列である

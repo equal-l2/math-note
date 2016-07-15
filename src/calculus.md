@@ -1,5 +1,8 @@
 \newcommand{\drm}{\mathrm{d}}
 \newcommand{\abs}[1]{\begin{vmatrix} #1 \end{vmatrix}}
+\newcommand{\tod}[2]{\frac{\drm #1}{\drm #2}}
+\newcommand{\pad}[2]{\frac{\partial #1}{\partial #2}}
+
 #Taylor展開
 関数$f$が点$a$において$k(\leq 1)$回微分可能なとき、次の式が成り立つ。
 
@@ -35,16 +38,31 @@ $$\displaystyle (x-x_0) \frac{\partial F}{\partial x}(x_0,y_0,z_0) + (y-y_0) \fr
 
 * 関数$f$が点$(a,b)$で極値をとるならば$f_x(a,b)=f_y(a,b)=0$  
 * $f_x(a,b)=f_y(a,b)=0$ならば点$(a,b)$は関数$f$の停留点である  
-* 停留点$(a,b)$について、$D=f_{xx}(a,b) f_{yy}(a,b) - f_{xy}(a,b)^2$とすると、  
+* 停留点$(a,b)$について、$D=f_{xx}(a,b) f_{yy}(a,b)- f_{xy}(a,b)^2$とすると、  
     $D<0$ならば停留点は極値ではない  
     $D>0$ならば停留点は極値である  
 \ \ \ \ \ \ \ \ $f_{xx}(a,b)>0\ (f_{yy}(a,b)>0)$ならば極値は極小値  
 \ \ \ \ \ \ \ \ $f_{xx}(a,b)<0\ (f_{yy}(a,b)<0)$ならば極値は極大値  
     $D=0$ならば判定不能  
 
+#陰関数の導関数
+$F(x,y)=0$で表現される陰関数$y=f(x)$について、導関数$\frac{\drm y}{\drm x}$を求めるには次の方法がある。  
+
+* $f(x)$を陽に求め、微分する  
+    $f(x)$を陽に求めることができない関数も存在する。  
+* $\frac{\drm F}{\drm x} = 0$を$\frac{\drm y}{\drm x}$について解く  
+* 次の公式を用いる  
+    $$ \frac{\drm y}{\drm x} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}$$  
+
+##公式の求め方  
+$F=0$の両辺を$x$で微分すると  
+$$\pad{F}{x} \tod{x}{x} + \pad{F}{y} \tod{y}{x} = 0$$  
+よって  
+$$\tod{y}{x} = -\frac{\pad{F}{x}}{\pad{F}{y}}$$
+
 #Jacobi行列とJacobian
 
-#定義
+##定義
 次のような$(m,n)$行列をJacobi行列と呼ぶ。  
 $$\displaystyle \frac{\partial(f_1,\cdots,f_m)}{\partial(x_1,\cdots,x_n)}=
 \begin{pmatrix}
@@ -55,7 +73,7 @@ $$\displaystyle \frac{\partial(f_1,\cdots,f_m)}{\partial(x_1,\cdots,x_n)}=
   
 Jacobi行列の行列式をJacobianという。  
 
-#変数変換
+##変数変換
 変数群$(x_1,\cdots,x_m)$,$(y_1,\cdots,y_n)$について、$\drm x_1 \drm x_2 \cdots \drm x_m$を$\drm y_1 \drm y_2 \cdots \drm y_m$に変数変換するとき、次の式が成り立つ。  
 $$\displaystyle \drm x_1 \drm x_2 \cdots \drm x_m = \abs{\displaystyle \frac{\partial(x_1,\cdots,x_m)}{\partial(y_1,\cdots,y_n)}} \drm y_1 \drm y_2 \cdots \drm y_m$$
 
